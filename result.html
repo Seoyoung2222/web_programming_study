@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>음식 추천</title>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+        header {
+            display: inline;
+            font-family: 'Agbalumo', sans-serif;
+            height: 75px;
+            padding: 1rem;
+            color: white;
+            background: teal;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+        }
+        h1 {
+            font-family: 'Agbalumo', sans-serif;
+            font-size: 7em;
+            text-align: center;
+        }
+
+        div {
+            font-family: 'Agbalumo', sans-serif;
+            float: left;
+            position: fixed;
+            border: 3px solid gainsboro;
+            width: 200px;
+            height: 800px;
+            border-radius: 10px 10px 0 0;
+            margin: 200px;
+            position: absolute;
+        }
+
+        #korean_food {
+            position: relative;
+            top: 50px;
+            z-index: 1;
+        }
+
+        #western_food {
+            position: relative;
+            top: 50px;
+            z-index: 2;
+        }
+
+        #western_food {
+            position: relative;
+            top: 50px;
+            z-index: 3;
+        }
+
+        #chinese_food {
+            position: relative;
+            top: 50px;
+            background-color: aqua;
+            z-index: 4;
+        }
+    </style>
+    <body>
+        <header>
+            <h3>food menu</h3>
+            <nav>
+                <span>korean</span>
+                <span>western</span>
+                <span>chinese</span>
+                <span>japanese</span>
+            </nav>
+        </header>
+    </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>음식 레시피</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Bagel+Fat+One&display=swap');
+
+            body {
+                font-family: 'Agbalumo';
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background: #333;
+                color: #fff;
+                text-align: center;
+                padding: 15px 0;
+            }
+
+            nav {
+                font-family: 'Bagel Fat One';
+                background: #444;
+                padding: 10px;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            nav li {
+                margin: 0 10px;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .recipe {
+                text-align: center;
+                padding: 20px;
+                position: fixed;
+                left: 0;
+                top: 200px;
+                bottom: 0;
+                overflow: auto;
+                display: none;
+                width: 200px;
+                background: #fff;
+                color: #333;
+            }
+
+            .recipe h2 {
+                color: #333;
+            }
+
+            .recipe p {
+                color: #555;
+            }
+
+            .korean {
+                display: none;
+            }
+
+            .japanese {
+                display: none;
+            }
+
+            .chinese {
+                display: none;
+            }
+
+            .active {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>recipes</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showRecipe('korean')">한식</a></li>
+                <li><a href="#" onclick="showRecipe('japanese')">양식</a></li>
+                <li><a href="#" onclick="showRecipe('chinese')">중식</a></li>
+            </ul>
+        </nav>
+
+        <div class="recipe korean">
+            <h2>한식 레시피</h2>
+            <p>김치찌개</p>
+            <!-- 여기에 한식 레시피 추가 -->
+        </div>
+
+        <div class="recipe japanese">
+            <h2>양식 레시피</h2>
+            <p>햄버거</p>
+            <!-- 여기에 일식 레시피 추가 -->
+        </div>
+
+        <div class="recipe chinese">
+            <h2>중식 레시피</h2>
+            <p>짜장면</p>
+            <!-- 여기에 중식 레시피 추가 -->
+        </div>
+
+        <script>
+            function showRecipe(category) {
+                const recipes = document.querySelectorAll('.recipe');
+                recipes.forEach((recipe) => {
+                    recipe.classList.remove('active');
+                });
+
+                document.querySelector('.' + category).classList.add('active');
+            }
+        </script>
+    </body>
+</html>

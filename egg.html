@@ -45,10 +45,10 @@
             .recipe {
                 text-align: center;
                 padding: 20px;
-                position: fixed;
-                left: 0;
-                top: 200px;
-                bottom: 0;
+                position: absolute; /* 변경된 부분 */
+                left: 50%; /* 변경된 부분 */
+                top: 50%; /* 변경된 부분 */
+                transform: translate(-50%, -50%); /* 변경된 부분 */
                 overflow: auto;
                 display: none;
                 width: 200px;
@@ -64,14 +64,8 @@
                 color: #555;
             }
 
-            .korean {
-                display: none;
-            }
-
-            .japanese {
-                display: none;
-            }
-
+            .korean,
+            .japanese,
             .chinese {
                 display: none;
             }
@@ -79,11 +73,46 @@
             .active {
                 display: block;
             }
+
+            .recipe-info {
+                text-align: left;
+            }
+
+            .recipe-step {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .recipe-step-number {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #f7d794;
+                color: #000;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15px;
+            }
+
+            .recipe-step-text {
+                width: 70%;
+            }
+
+            .recipe-step img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
         </style>
     </head>
     <body>
         <header>
-            <h1>recipes</h1>
+            <h1>Recipes</h1>
         </header>
 
         <nav>
@@ -95,9 +124,19 @@
         </nav>
 
         <div class="recipe korean">
-            <h2>한식 레시피</h2>
-            <p>김치찌개</p>
-            <!-- 여기에 한식 레시피 추가 -->
+            <div class="recipe-info">
+                <h2>한식 레시피</h2>
+                <p>계란말이</p>
+            </div>
+            <div class="recipe-step">
+                <div class="recipe-step-number">1</div>
+                <div class="recipe-step-text">
+                    <p>계란 3개를 그릇에 풀어주세요.</p>
+                </div>
+                <div class="recipe-step-image">
+                    <img src="계란_그릇.jpg" alt="계란을 그릇에 푼 사진" />
+                </div>
+            </div>
         </div>
 
         <div class="recipe japanese">

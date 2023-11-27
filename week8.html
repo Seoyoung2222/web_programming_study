@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>searchNews</title>
+    </head>
+    <script>
+        async function logJSONData() {
+            const apiKey = '716531b66d0c4d919b8d737da5a84a51';
+            const searchQuery = document.getElementById('searchInput').value;
+
+            const apiUrl = `https://newsapi.org/v2/everything?q=${searchQuery}&from=2023-10-27&sortBy=publishedAt&apiKey=${apiKey}`;
+            let res = await fetch(apiUrl);
+            let data = await res.json();
+            console.log(data.articles);
+            for (var article of data.articles) {
+                let parent = document.querySelector('#newsList');
+                parent.innerHTML += `<div><a href = "${article.url}">${article.title}</a></div>`;
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search input[type='text'] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .search button {
+            padding: 8px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #2db400;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 5px;
+        }
+    </style>
+    <body>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="뉴스 검색하기" />
+            <button onclick="logJSONData()">검색</button>
+        </div>
+        <ul id="newsList"></ul>
+    </body>
+</html>
